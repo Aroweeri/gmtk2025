@@ -14,3 +14,7 @@ config/name="gmtk2025"
 run/main_scene="uid://bhujpltdw4ljj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=3

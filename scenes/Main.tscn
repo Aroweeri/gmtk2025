@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhujpltdw4ljj"]
+[gd_scene load_steps=6 format=3 uid="uid://bhujpltdw4ljj"]
 
+[ext_resource type="Script" uid="uid://cretloakqtccg" path="res://scenes/main.gd" id="1_rarhs"]
 [ext_resource type="Texture2D" uid="uid://dkm55g8bd5x2i" path="res://icon.svg" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://dp84pamq5ofd7" path="res://scripts/rotator.gd" id="2_0bbpv"]
 [ext_resource type="Script" uid="uid://bt0iktgl5e5py" path="res://scripts/player.gd" id="3_0bbpv"]
@@ -8,38 +9,42 @@
 radius = 71.0282
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_rarhs")
 
-[node name="MainRotationPoint" type="Node2D" parent="."]
-
-[node name="Sun" type="Sprite2D" parent="MainRotationPoint"]
+[node name="Sun" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
 texture = ExtResource("1_rvslj")
 
-[node name="Rotator" type="Node2D" parent="MainRotationPoint"]
+[node name="PlayerRotator" type="Node2D" parent="."]
 script = ExtResource("2_0bbpv")
 
-[node name="Player" type="Node2D" parent="MainRotationPoint/Rotator"]
-position = Vector2(467, 0)
+[node name="Player" type="Node2D" parent="PlayerRotator"]
+position = Vector2(2000, 0)
 script = ExtResource("3_0bbpv")
 
-[node name="Sprite" type="Sprite2D" parent="MainRotationPoint/Rotator/Player"]
+[node name="Sprite" type="Sprite2D" parent="PlayerRotator/Player"]
 texture = ExtResource("1_rvslj")
 
-[node name="Camera2D" type="Camera2D" parent="MainRotationPoint/Rotator/Player"]
+[node name="Camera2D" type="Camera2D" parent="PlayerRotator/Player"]
 zoom = Vector2(0.25, 0.25)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MainRotationPoint/Rotator/Player"]
+[node name="StaticBody2D" type="StaticBody2D" parent="PlayerRotator/Player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MainRotationPoint/Rotator/Player/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRotator/Player/StaticBody2D"]
 shape = SubResource("CircleShape2D_0bbpv")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(715, 209)
 
-[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
-offset_left = -5872.0
-offset_top = -5910.0
-offset_right = -5744.0
-offset_bottom = -5782.0
-scale = Vector2(91.8171, 91.8171)
+scale = Vector2(100, 100)
 texture = ExtResource("1_rvslj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ESC to quit"
