@@ -22,6 +22,7 @@ script = ExtResource("3_0bbpv")
 texture = ExtResource("1_rvslj")
 
 [node name="Camera2D" type="Camera2D" parent="MainRotationPoint/Rotator/Player"]
+zoom = Vector2(0.25, 0.25)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
