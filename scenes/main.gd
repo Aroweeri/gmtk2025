@@ -28,4 +28,4 @@ func _input(event: InputEvent) -> void:
 
 func _draw() -> void:
 	var radius = $PlayerRotator/Player.position.x;
-	draw_circle(Vector2.ZERO, radius, Color.WHITE, false, 5)
+	draw_circle(Vector2.ZERO, radius, Color.WHITE, false, 5, true)
