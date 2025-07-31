@@ -2,6 +2,9 @@ extends Node2D
 
 var Obstacle = preload("res://scenes/obstacle.tscn")
 
+func _process(delta: float) -> void:
+	queue_redraw()
+
 func _init() -> void:
 	for i in range(50):
 		var tempRotator = Node2D.new()
@@ -21,3 +24,8 @@ func _init() -> void:
 func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("ui_cancel")):
 		get_tree().quit();
+		
+
+func _draw() -> void:
+	var radius = $PlayerRotator/Player.position.x;
+	draw_circle(Vector2.ZERO, radius, Color.WHITE, false, 5)
