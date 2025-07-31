@@ -24,7 +24,10 @@ texture = ExtResource("1_rvslj")
 [node name="Camera2D" type="Camera2D" parent="MainRotationPoint/Rotator/Player"]
 zoom = Vector2(0.25, 0.25)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
 z_index = -1
 offset_left = -5872.0
 offset_top = -5910.0
