@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://couxhftxssk1x"]
+[gd_scene load_steps=5 format=3 uid="uid://couxhftxssk1x"]
 
-[ext_resource type="Texture2D" uid="uid://dkm55g8bd5x2i" path="res://icon.svg" id="1_sl1jc"]
+[ext_resource type="Texture2D" uid="uid://bev4t5pt8teju" path="res://icon.png" id="1_drdry"]
+[ext_resource type="Texture2D" uid="uid://bpd0ghj8asrp0" path="res://icon_n.png" id="2_cjuko"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aubd6"]
 radius = 72.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sh7k1"]
+diffuse_texture = ExtResource("1_drdry")
+normal_texture = ExtResource("2_cjuko")
 
 [node name="Obstacle" type="StaticBody2D"]
 
@@ -11,4 +16,4 @@ radius = 72.0
 shape = SubResource("CircleShape2D_aubd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-texture = ExtResource("1_sl1jc")
+texture = SubResource("CanvasTexture_sh7k1")
