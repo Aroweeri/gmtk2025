@@ -8,4 +8,3 @@ func _physics_process(delta: float) -> void:
 		translate(Vector2(10,0));
 	elif(Input.is_action_pressed("ui_down")):
 		translate(Vector2(-10,0));
-		
