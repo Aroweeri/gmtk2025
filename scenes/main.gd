@@ -6,17 +6,18 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func _init() -> void:
-	for i in range(50):
+	for i in range(800):
 		var tempRotator = Node2D.new()
 		var tempPositioner = Node2D.new();
 		tempRotator.rotation = randf()*PI*2
-		tempPositioner.position = Vector2(1500 + (randf()*2000), 0);
+		tempPositioner.position = Vector2(1500 + (randf()*6000), 0);
 		tempRotator.add_child(tempPositioner);
 		var targetPosition = Vector2(tempPositioner.global_position);
 		
 		var newObstacle = Obstacle.instantiate()
 		newObstacle.position = targetPosition
-		(newObstacle.get_node("CollisionShape2D/Sprite2D") as Node2D).scale *= 0.5+randf()*5
+		var myrand = randf()
+		(newObstacle.get_node("CollisionShape2D/Sprite2D") as Node2D).scale *= pow(myrand, 4)*2+0.5
 		
 		newObstacle.rotation = randf()*PI*2
 		add_child(newObstacle)
