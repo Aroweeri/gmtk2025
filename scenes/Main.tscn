@@ -34,7 +34,8 @@ texture = SubResource("CanvasTexture_jlsqs")
 [node name="Camera2D" type="Camera2D" parent="PlayerRotator/Player"]
 zoom = Vector2(0.25, 0.25)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PlayerRotator/Player"]
+[node name="StaticBody2D" type="RigidBody2D" parent="PlayerRotator/Player"]
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRotator/Player/StaticBody2D"]
 shape = SubResource("CircleShape2D_0bbpv")
@@ -57,6 +58,7 @@ offset_bottom = 23.0
 text = "ESC to quit"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 1.5
 shadow_enabled = true
 texture = ExtResource("6_nxtc6")
 texture_scale = 50.0

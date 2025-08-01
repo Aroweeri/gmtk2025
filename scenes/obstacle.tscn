@@ -1,19 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://couxhftxssk1x"]
+[gd_scene load_steps=6 format=3 uid="uid://couxhftxssk1x"]
 
+[ext_resource type="Script" uid="uid://bg8fd6frowlve" path="res://scenes/obstacle.gd" id="1_cjuko"]
 [ext_resource type="Texture2D" uid="uid://bev4t5pt8teju" path="res://icon.png" id="1_drdry"]
 [ext_resource type="Texture2D" uid="uid://bpd0ghj8asrp0" path="res://icon_n.png" id="2_cjuko"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_aubd6"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjuko"]
 radius = 72.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_sh7k1"]
 diffuse_texture = ExtResource("1_drdry")
 normal_texture = ExtResource("2_cjuko")
 
-[node name="Obstacle" type="StaticBody2D"]
+[node name="Obstacle" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_cjuko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_aubd6")
+shape = SubResource("CircleShape2D_cjuko")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 texture = SubResource("CanvasTexture_sh7k1")

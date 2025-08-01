@@ -5,7 +5,7 @@ var Obstacle = preload("res://scenes/obstacle.tscn")
 func _process(delta: float) -> void:
 	queue_redraw()
 
-func _init() -> void:
+func _ready() -> void:
 	for i in range(800):
 		var tempRotator = Node2D.new()
 		var tempPositioner = Node2D.new();
@@ -17,7 +17,12 @@ func _init() -> void:
 		var newObstacle = Obstacle.instantiate()
 		newObstacle.position = targetPosition
 		var myrand = randf()
-		(newObstacle.get_node("CollisionShape2D/Sprite2D") as Node2D).scale *= pow(myrand, 4)*2+0.5
+		var scaleFactor = pow(myrand, 4)*2+0.5
+		(newObstacle.get_node("CollisionShape2D/Sprite2D") as Node2D).scale *= scaleFactor
+		var s = newObstacle.get_node("CollisionShape2D").shape
+		s = s.duplicate();
+		s.radius *= scaleFactor
+		(newObstacle.get_node("CollisionShape2D") as CollisionShape2D).shape = s
 		
 		newObstacle.rotation = randf()*PI*2
 		add_child(newObstacle)
