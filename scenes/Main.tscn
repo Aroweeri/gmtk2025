@@ -18,7 +18,6 @@ radius = 71.0282
 script = ExtResource("1_rarhs")
 
 [node name="Sun" type="Sprite2D" parent="."]
-light_mask = 0
 scale = Vector2(10, 10)
 texture = ExtResource("1_rvslj")
 
