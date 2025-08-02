@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://u8d4vhh6prku"
+=======
+uid="uid://dfhgyv68nxl3f"
+>>>>>>> 438210b (Eat asteroids.)
 path="res://.godot/imported/asteroid-f.png-b52bbb557bfee55f23489a9d07e88436.ctex"
 metadata={
 "vram_texture": false

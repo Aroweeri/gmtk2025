@@ -26,8 +26,12 @@ func _ready() -> void:
 		
 		#use math to determine and set the scale of the new asteroid
 		var myrand = randf()
-		var scaleFactor = pow(myrand, 4)*2+0.5
+		var scaleFactor = (pow(myrand, 4)*2+0.5)/3
 		(newObstacle.get_node("CollisionShape2D/Sprite2D") as Node2D).scale *= scaleFactor #just sprite size
+		
+		#set it's size for eating math
+		newObstacle.startingSize = newObstacle.get_node("CollisionShape2D").shape.radius
+		newObstacle.size = newObstacle.startingSize * scaleFactor
 		
 		#now to scale the collision shape to match the sprite's size (can't just scale it, it breaks)
 		#workaround to avoid changing one asteroid's collision shape causing all the asteroids to use that shape
