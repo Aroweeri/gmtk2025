@@ -42,6 +42,6 @@ func _physics_process(_delta: float) -> void:
 	#player is just on an extending arm essentially.
 	#Just extend/retract the arm to change their distance from center
 	if(Input.is_action_pressed("ui_up")):
-		translate(Vector2(10,0));
+		translate(Vector2(50,0));
 	elif(Input.is_action_pressed("ui_down")):
-		translate(Vector2(-10,0));
+		translate(Vector2(-50,0));

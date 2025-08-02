@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmo0ojifvfkm0"]
+
+[ext_resource type="Script" uid="uid://bg8fd6frowlve" path="res://scenes/obstacle.gd" id="1_eqpke"]
+[ext_resource type="Texture2D" uid="uid://b6h7p3kdmpleu" path="res://assets/asteroid-a.png" id="2_e4evl"]
+[ext_resource type="Texture2D" uid="uid://bqkisaytuvmif" path="res://assets/asteroid-a_n.png" id="3_hvmmh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjuko"]
+radius = 225.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i4xvc"]
+diffuse_texture = ExtResource("2_e4evl")
+normal_texture = ExtResource("3_hvmmh")
+
+[node name="Obstacle" type="RigidBody2D"]
+mass = 25.433
+gravity_scale = 0.0
+script = ExtResource("1_eqpke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+shape = SubResource("CircleShape2D_cjuko")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+modulate = Color(0.753906, 0.753906, 0.753906, 1)
+texture = SubResource("CanvasTexture_i4xvc")
+
+[node name="Parallax2D" type="Parallax2D" parent="CollisionShape2D"]
+z_index = -1

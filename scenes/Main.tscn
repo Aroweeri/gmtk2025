@@ -1,19 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://bhujpltdw4ljj"]
+[gd_scene load_steps=15 format=3 uid="uid://bhujpltdw4ljj"]
 
 [ext_resource type="Script" uid="uid://cretloakqtccg" path="res://scenes/main.gd" id="1_rarhs"]
 [ext_resource type="Texture2D" uid="uid://dkm55g8bd5x2i" path="res://icon.svg" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://dp84pamq5ofd7" path="res://scripts/rotator.gd" id="2_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://chw70u2c8siwq" path="res://assets/Sun.png" id="2_nxtc6"]
 [ext_resource type="Script" uid="uid://bt0iktgl5e5py" path="res://scripts/player.gd" id="3_0bbpv"]
-[ext_resource type="Texture2D" uid="uid://bpd0ghj8asrp0" path="res://icon_n.png" id="5_c01mt"]
+[ext_resource type="Texture2D" uid="uid://cqdfthrx6cgyc" path="res://assets/Planet.png" id="5_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://cdh7da8rvrw0d" path="res://assets/Planet_n.png" id="6_bjd11"]
 [ext_resource type="Texture2D" uid="uid://b8lhxbmwq6pew" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="6_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="7_q8u5g"]
 [ext_resource type="AudioStream" uid="uid://dbjebr5jp0l12" path="res://assets/oof.ogg" id="8_jlsqs"]
 [ext_resource type="AudioStream" uid="uid://disjmopfasxnc" path="res://assets/Stream Loops 2024-03-20_02.ogg" id="10_lhr70"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_jlsqs"]
-diffuse_texture = ExtResource("1_rvslj")
-normal_texture = ExtResource("5_c01mt")
+[sub_resource type="CanvasTexture" id="CanvasTexture_qmy6f"]
+diffuse_texture = ExtResource("5_wp0k4")
+normal_texture = ExtResource("6_bjd11")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0bbpv"]
 radius = 71.0282
@@ -36,7 +37,7 @@ position = Vector2(10000, 0)
 script = ExtResource("3_0bbpv")
 
 [node name="Sprite" type="Sprite2D" parent="PlayerRotator/Player"]
-texture = SubResource("CanvasTexture_jlsqs")
+texture = SubResource("CanvasTexture_qmy6f")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRotator/Player"]
 zoom = Vector2(0.2, 0.2)
@@ -52,7 +53,7 @@ scroll_offset = Vector2(715, 209)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 light_mask = 0
-z_index = -1
+z_index = -2
 material = SubResource("CanvasItemMaterial_q8u5g")
 scale = Vector2(14, 14)
 texture = ExtResource("7_q8u5g")
@@ -92,7 +93,7 @@ texture = ExtResource("1_rvslj")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(2.74547, 2.74547)
-energy = 1.2
+energy = 2.0
 shadow_enabled = true
 texture = ExtResource("6_nxtc6")
 texture_scale = 50.0
@@ -108,6 +109,7 @@ volume_db = -6.093
 stream = ExtResource("10_lhr70")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [connection signal="healthLost" from="PlayerRotator/Player" to="." method="_on_player_health_lost"]
 [connection signal="playerDied" from="PlayerRotator/Player" to="." method="_on_player_player_died"]

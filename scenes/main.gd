@@ -1,13 +1,15 @@
 extends Node2D
 
 var Obstacle = preload("res://scenes/obstacle.tscn")
+var Obstacle2 = preload("res://scenes/obstacle2.tscn")
 
 func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _ready() -> void:
 	#loop and create 800 different asteroids
-	for i in range(400):
+	for i in range(1000):
+		
 		
 		#use tempRotator and tempPositioner to pick a random angle and go out a random distance, to 
 		#distribute astreroids equally around the center.
@@ -44,13 +46,60 @@ func _ready() -> void:
 		newObstacle.rotation = randf()*PI*2
 		
 		#pick a random color
-		var random_color = Color(randf(), randf(), randf())
-		(newObstacle as Node2D).modulate = random_color
-		print(random_color) 
+		var crand = randf()
+		var random_white = randf_range(0.4, 0.9)
+		if crand <= 0.5:
+			var random_color = Color(randf_range(0.5, 0.75), randf_range(0.2, 0.4), 0)
+			(newObstacle as Node2D).modulate = random_color
+		else:
+			var random_color = Color(random_white, random_white, random_white)
+			(newObstacle as Node2D).modulate = random_color
 		
 		#add to scene so it'll be actually be visible
 		add_child(newObstacle)
 	
+	#Layer 2
+	for i in range(1000):
+		
+		#use tempRotator and tempPositioner to pick a random angle and go out a random distance, to 
+		#distribute astreroids equally around the center.
+		var tempRotator = Node2D.new()
+		var tempPositioner = Node2D.new();
+		tempRotator.rotation = randf()*PI*2
+		tempPositioner.position = Vector2(10000 + (sqrt(randf()*6000)*100), 0);
+		tempRotator.add_child(tempPositioner);
+		var targetPosition = Vector2(tempPositioner.global_position);
+		
+		#create the asteroid from the obstacle.tscn scene
+		var newObstacle2 = Obstacle2.instantiate()
+		
+		#set it's position using the position calculated above
+		newObstacle2.position = targetPosition
+		
+		#use math to determine and set the scale of the new asteroid
+		var myrand = randf()
+		var scaleFactor = (pow(myrand, 5)*10+0.3)/3
+		(newObstacle2.get_node("CollisionShape2D/Sprite2D") as Node2D).scale *= scaleFactor #just sprite size
+		
+		#set it's size for eating math
+		newObstacle2.startingSize = newObstacle2.get_node("CollisionShape2D").shape.radius
+		newObstacle2.size = newObstacle2.startingSize * scaleFactor
+		
+		#now to scale the collision shape to match the sprite's size (can't just scale it, it breaks)
+		#workaround to avoid changing one asteroid's collision shape causing all the asteroids to use that shape
+		var s = newObstacle2.get_node("CollisionShape2D").shape
+		s = s.duplicate();
+		s.radius *= scaleFactor
+		(newObstacle2.get_node("CollisionShape2D") as CollisionShape2D).shape = s
+		
+		#pick a random rotation
+		newObstacle2.rotation = randf()*PI*2
+		
+		(newObstacle2 as Node2D).modulate = Color(0, 0, 1)
+		
+		#add to scene so it'll be actually be visible
+		add_child(newObstacle2)
+
 func _on_player_health_lost():
 	$AudioStreamPlayer.play();
 	$CanvasLayer/MarginContainer/healthHBox.get_child(0).queue_free()
@@ -67,4 +116,4 @@ func _draw() -> void:
 
 
 func _on_player_player_died() -> void:
-	get_tree().reload_current_scene();
+	get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
