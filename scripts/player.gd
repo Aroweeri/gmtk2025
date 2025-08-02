@@ -26,7 +26,7 @@ func _area_on_body_entered(body):
 		body.queue_free()
 	else:
 		health-=1
-		if(health==0):
+		if(health<0):
 			playerDied.emit()
 		else:
 			healthLost.emit()
