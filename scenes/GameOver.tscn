@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://jxcugdk853mw"]
 
-[ext_resource type="Script" uid="uid://dar3mxenb0yy5" path="res://scripts/main_menu.gd" id="1_4noiy"]
+[ext_resource type="Script" uid="uid://bruy2wyqmb6n7" path="res://scripts/gameover.gd" id="1_4noiy"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="2_gijjb"]
 [ext_resource type="Texture2D" uid="uid://chw70u2c8siwq" path="res://assets/Sun.png" id="3_88ekj"]
 [ext_resource type="AudioStream" uid="uid://bq6q3nuu6en2n" path="res://assets/Ludum Dare 30 - 07.ogg" id="4_0winm"]
@@ -30,34 +30,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 200
 text = "Game Over"
 
-[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Restart"
 
-[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-disabled = true
-text = "Options"
-
-[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-disabled = true
-text = "Credits"
-
-[node name="Credits" type="Label" parent="CenterContainer/VBoxContainer/CreditsButton"]
-layout_mode = 0
-offset_left = 298.0
-offset_top = 33.0
-offset_right = 792.0
-offset_bottom = 150.0
-text = "Art: Jade Tempest
-Code: Dylan Sutton, Jade Tempest
-Music: xxx"
-horizontal_alignment = 1
-
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Return to Main Menu"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -1
@@ -90,7 +69,5 @@ stream = ExtResource("4_0winm")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
