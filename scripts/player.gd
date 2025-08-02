@@ -16,7 +16,7 @@ func _area_on_body_entered(body):
 		#absorb
 		var bodyMass = size_to_mass(body.size)
 		var myMass = size_to_mass(size)
-		size = mass_to_size(bodyMass+myMass)
+		size = mass_to_size(bodyMass/4+myMass)
 		$Sprite.scale = Vector2(size/startingSize,size/startingSize)
 		$StaticBody2D/CollisionShape2D.shape.radius = startingSize*(size/startingSize)
 		body.queue_free()

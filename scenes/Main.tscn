@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhujpltdw4ljj"]
+[gd_scene load_steps=10 format=3 uid="uid://bhujpltdw4ljj"]
 
 [ext_resource type="Script" uid="uid://cretloakqtccg" path="res://scenes/main.gd" id="1_rarhs"]
 [ext_resource type="Texture2D" uid="uid://dkm55g8bd5x2i" path="res://icon.svg" id="1_rvslj"]
 [ext_resource type="Script" uid="uid://dp84pamq5ofd7" path="res://scripts/rotator.gd" id="2_0bbpv"]
+[ext_resource type="Texture2D" uid="uid://chw70u2c8siwq" path="res://assets/Sun.png" id="2_nxtc6"]
 [ext_resource type="Script" uid="uid://bt0iktgl5e5py" path="res://scripts/player.gd" id="3_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://bpd0ghj8asrp0" path="res://icon_n.png" id="5_c01mt"]
 [ext_resource type="Texture2D" uid="uid://b8lhxbmwq6pew" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="6_nxtc6"]
@@ -18,8 +19,8 @@ radius = 71.0282
 script = ExtResource("1_rarhs")
 
 [node name="Sun" type="Sprite2D" parent="."]
-scale = Vector2(10, 10)
-texture = ExtResource("1_rvslj")
+scale = Vector2(7.83333, 7.83334)
+texture = ExtResource("2_nxtc6")
 
 [node name="PlayerRotator" type="Node2D" parent="."]
 script = ExtResource("2_0bbpv")
