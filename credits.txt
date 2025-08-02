@@ -1,0 +1,11 @@
+Credits
+
+	Sound Effects:
+
+	Art: Jdenki
+
+	Coding: Aroweeri, Jdenki
+
+	Background Music:
+		music-loop-bundle by Abstraction
+			-- https://tallbeard.itch.io/music-loop-bundle -- License: Creative Commons 0
