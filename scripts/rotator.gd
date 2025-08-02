@@ -1,6 +1,6 @@
 extends Node2D
 
-var ROTATION_SPEED=500
+var ROTATION_SPEED=750
 	
 func _physics_process(delta: float) -> void:
 	

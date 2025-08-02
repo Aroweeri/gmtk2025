@@ -19,21 +19,21 @@ radius = 71.0282
 script = ExtResource("1_rarhs")
 
 [node name="Sun" type="Sprite2D" parent="."]
-scale = Vector2(7.83333, 7.83334)
+scale = Vector2(17.82, 17.82)
 texture = ExtResource("2_nxtc6")
 
 [node name="PlayerRotator" type="Node2D" parent="."]
 script = ExtResource("2_0bbpv")
 
 [node name="Player" type="Node2D" parent="PlayerRotator"]
-position = Vector2(2000, 0)
+position = Vector2(6088, 0)
 script = ExtResource("3_0bbpv")
 
 [node name="Sprite" type="Sprite2D" parent="PlayerRotator/Player"]
 texture = SubResource("CanvasTexture_jlsqs")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRotator/Player"]
-zoom = Vector2(0.25, 0.25)
+zoom = Vector2(0.2, 0.2)
 
 [node name="StaticBody2D" type="Area2D" parent="PlayerRotator/Player"]
 

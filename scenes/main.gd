@@ -7,14 +7,14 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	#loop and create 800 different asteroids
-	for i in range(200):
+	for i in range(400):
 		
 		#use tempRotator and tempPositioner to pick a random angle and go out a random distance, to 
 		#distribute astreroids equally around the center.
 		var tempRotator = Node2D.new()
 		var tempPositioner = Node2D.new();
 		tempRotator.rotation = randf()*PI*2
-		tempPositioner.position = Vector2(1500 + (randf()*6000), 0);
+		tempPositioner.position = Vector2(6000 + (sqrt(randf()*6000)*100), 0);
 		tempRotator.add_child(tempPositioner);
 		var targetPosition = Vector2(tempPositioner.global_position);
 		
