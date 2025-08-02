@@ -4,7 +4,7 @@ Credits
 
 	Art: Jdenki
 
-	Coding: Aroweeri, Jdenki
+	Coding: NaiveCAD, Jdenki
 
 	Background Music:
 		music-loop-bundle by Abstraction
