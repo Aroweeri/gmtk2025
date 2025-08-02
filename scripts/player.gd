@@ -6,6 +6,7 @@ signal playerDied
 var size=0
 var startingSize=0
 var health=5
+var speed=0
 
 #size is equivalent to diameter
 func size_to_mass(s):
@@ -37,11 +38,16 @@ func _ready() -> void:
 	size = startingSize
 	$StaticBody2D.body_entered.connect(_area_on_body_entered);
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	#player is just on an extending arm essentially.
 	#Just extend/retract the arm to change their distance from center
 	if(Input.is_action_pressed("ui_up")):
-		translate(Vector2(50,0));
+		speed += 100 * delta
 	elif(Input.is_action_pressed("ui_down")):
-		translate(Vector2(-50,0));
+		speed -= 100 * delta;
+		
+	#dampen
+	speed *= 0.95
+		
+	translate(Vector2(speed,0));
