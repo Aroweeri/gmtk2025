@@ -30,6 +30,7 @@ func _area_on_body_entered(body):
 			playerDied.emit()
 		else:
 			healthLost.emit()
+			pass
 
 func _ready() -> void:
 	startingSize = $StaticBody2D/CollisionShape2D.shape.radius

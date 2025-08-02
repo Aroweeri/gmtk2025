@@ -14,7 +14,7 @@ func _ready() -> void:
 		var tempRotator = Node2D.new()
 		var tempPositioner = Node2D.new();
 		tempRotator.rotation = randf()*PI*2
-		tempPositioner.position = Vector2(6000 + (sqrt(randf()*6000)*100), 0);
+		tempPositioner.position = Vector2(10000 + (sqrt(randf()*6000)*100), 0);
 		tempRotator.add_child(tempPositioner);
 		var targetPosition = Vector2(tempPositioner.global_position);
 		
@@ -42,6 +42,11 @@ func _ready() -> void:
 		
 		#pick a random rotation
 		newObstacle.rotation = randf()*PI*2
+		
+		#pick a random color
+		var random_color = Color(randf(), randf(), randf())
+		(newObstacle as Node2D).modulate = random_color
+		print(random_color) 
 		
 		#add to scene so it'll be actually be visible
 		add_child(newObstacle)
