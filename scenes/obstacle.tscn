@@ -27,6 +27,5 @@ shape = SubResource("CircleShape2D_cjuko")
 modulate = Color(0.753906, 0.753906, 0.753906, 1)
 texture = SubResource("CanvasTexture_i4xvc")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D"]
-visible = false
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D/Sprite2D"]
 occluder = SubResource("OccluderPolygon2D_cjuko")
