@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b8lhxbmwq6pew" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="6_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="7_q8u5g"]
 [ext_resource type="AudioStream" uid="uid://dbjebr5jp0l12" path="res://assets/oof.ogg" id="8_jlsqs"]
+[ext_resource type="AudioStream" uid="uid://disjmopfasxnc" path="res://assets/Stream Loops 2024-03-20_02.ogg" id="10_lhr70"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jlsqs"]
 diffuse_texture = ExtResource("1_rvslj")
@@ -102,6 +103,11 @@ color = Color(0.194349, 0.194349, 0.194349, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_jlsqs")
 volume_db = -6.093
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_lhr70")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="healthLost" from="PlayerRotator/Player" to="." method="_on_player_health_lost"]
 [connection signal="playerDied" from="PlayerRotator/Player" to="." method="_on_player_player_died"]
