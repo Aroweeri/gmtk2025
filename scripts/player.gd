@@ -8,14 +8,14 @@ var startingSize=0
 var health=5
 
 #size is equivalent to diameter
-func size_to_mass(size):
-	return PI*size*size
+func size_to_mass(s):
+	return PI*s*s
 	
 func mass_to_size(mass):
 	return sqrt(mass/PI)
 
 func _area_on_body_entered(body):
-	if(body.size <= size/2):
+	if(body.size <= size/2.0):
 		print("My Mass %f + Their Mass %f = %f" % [size_to_mass(size), size_to_mass(body.size), (size_to_mass(size)+ size_to_mass(body.size))])
 		#absorb
 		var bodyMass = size_to_mass(body.size)
@@ -36,7 +36,7 @@ func _ready() -> void:
 	size = startingSize
 	$StaticBody2D.body_entered.connect(_area_on_body_entered);
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	#player is just on an extending arm essentially.
 	#Just extend/retract the arm to change their distance from center
