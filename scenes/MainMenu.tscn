@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://401dukv06l6f"]
+[gd_scene load_steps=5 format=3 uid="uid://401dukv06l6f"]
 
 [ext_resource type="Script" uid="uid://dar3mxenb0yy5" path="res://scripts/main_menu.gd" id="1_2wh52"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="2_ow34m"]
 [ext_resource type="Texture2D" uid="uid://chw70u2c8siwq" path="res://assets/Sun.png" id="3_l72w3"]
+[ext_resource type="AudioStream" uid="uid://bq6q3nuu6en2n" path="res://assets/Ludum Dare 30 - 07.ogg" id="4_ow34m"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -35,10 +36,12 @@ text = "Start"
 
 [node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
@@ -70,6 +73,11 @@ offset_bottom = -249.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_l72w3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ow34m")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
