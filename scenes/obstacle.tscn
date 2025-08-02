@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://couxhftxssk1x"]
 
 [ext_resource type="Script" uid="uid://bg8fd6frowlve" path="res://scenes/obstacle.gd" id="1_cjuko"]
-[ext_resource type="Texture2D" uid="uid://bor2ry5ngw3of" path="res://assets/asteroid-a.png" id="2_cjuko"]
-[ext_resource type="Texture2D" uid="uid://bj8gmoml0tvwa" path="res://assets/asteroid-a_n.png" id="3_sh7k1"]
+[ext_resource type="Texture2D" uid="uid://b6h7p3kdmpleu" path="res://assets/asteroid-a.png" id="2_cjuko"]
+[ext_resource type="Texture2D" uid="uid://bqkisaytuvmif" path="res://assets/asteroid-a_n.png" id="3_sh7k1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjuko"]
 radius = 236.008
