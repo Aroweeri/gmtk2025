@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhujpltdw4ljj"]
+[gd_scene load_steps=11 format=3 uid="uid://bhujpltdw4ljj"]
 
 [ext_resource type="Script" uid="uid://cretloakqtccg" path="res://scenes/main.gd" id="1_rarhs"]
 [ext_resource type="Texture2D" uid="uid://dkm55g8bd5x2i" path="res://icon.svg" id="1_rvslj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bt0iktgl5e5py" path="res://scripts/player.gd" id="3_0bbpv"]
 [ext_resource type="Texture2D" uid="uid://bpd0ghj8asrp0" path="res://icon_n.png" id="5_c01mt"]
 [ext_resource type="Texture2D" uid="uid://b8lhxbmwq6pew" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="6_nxtc6"]
+[ext_resource type="AudioStream" uid="uid://dbjebr5jp0l12" path="res://assets/oof.ogg" id="8_jlsqs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_jlsqs"]
 diffuse_texture = ExtResource("1_rvslj")
@@ -66,3 +67,10 @@ texture_scale = 50.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.194349, 0.194349, 0.194349, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jlsqs")
+volume_db = -6.093
+
+[connection signal="healthLost" from="PlayerRotator/Player" to="." method="_on_player_health_lost"]
+[connection signal="playerDied" from="PlayerRotator/Player" to="." method="_on_player_player_died"]

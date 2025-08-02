@@ -45,6 +45,10 @@ func _ready() -> void:
 		
 		#add to scene so it'll be actually be visible
 		add_child(newObstacle)
+	
+func _on_player_health_lost():
+	$AudioStreamPlayer.play();
+	print("Health lost.");
 
 func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("ui_cancel")): #ESC for now
@@ -55,3 +59,7 @@ func _input(event: InputEvent) -> void:
 func _draw() -> void:
 	var radius = $PlayerRotator/Player.position.x;
 	draw_circle(Vector2.ZERO, radius, Color.WHITE, false, 5, true)
+
+
+func _on_player_player_died() -> void:
+	get_tree().reload_current_scene();

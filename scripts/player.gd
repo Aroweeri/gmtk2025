@@ -1,7 +1,11 @@
 extends Node2D
 
+signal healthLost
+signal playerDied
+
 var size=0
 var startingSize=0
+var health=5
 
 #size is equivalent to diameter
 func size_to_mass(size):
@@ -21,7 +25,11 @@ func _area_on_body_entered(body):
 		$StaticBody2D/CollisionShape2D.shape.radius = startingSize*(size/startingSize)
 		body.queue_free()
 	else:
-		pass;
+		health-=1
+		if(health==0):
+			playerDied.emit()
+		else:
+			healthLost.emit()
 
 func _ready() -> void:
 	startingSize = $StaticBody2D/CollisionShape2D.shape.radius
