@@ -26,7 +26,7 @@ func _ready() -> void:
 		
 		#use math to determine and set the scale of the new asteroid
 		var myrand = randf()
-		var scaleFactor = (pow(myrand, 5)*10+0.5)/3
+		var scaleFactor = (pow(myrand, 5)*10+0.3)/3
 		(newObstacle.get_node("CollisionShape2D/Sprite2D") as Node2D).scale *= scaleFactor #just sprite size
 		
 		#set it's size for eating math

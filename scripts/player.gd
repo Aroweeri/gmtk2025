@@ -11,7 +11,7 @@ func mass_to_size(mass):
 	return sqrt(mass/PI)
 
 func _area_on_body_entered(body):
-	if(body.size <= size):
+	if(body.size <= size/2):
 		print("My Mass %f + Their Mass %f = %f" % [size_to_mass(size), size_to_mass(body.size), (size_to_mass(size)+ size_to_mass(body.size))])
 		#absorb
 		var bodyMass = size_to_mass(body.size)
