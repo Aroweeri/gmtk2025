@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="2_ow34m"]
 [ext_resource type="Texture2D" uid="uid://chw70u2c8siwq" path="res://assets/Sun.png" id="3_l72w3"]
 [ext_resource type="AudioStream" uid="uid://bq6q3nuu6en2n" path="res://assets/Ludum Dare 30 - 07.ogg" id="4_ow34m"]
-[ext_resource type="PackedScene" uid="uid://dll3jkyyw6d4k" path="res://controlsWidget.tscn" id="6_826wr"]
+[ext_resource type="PackedScene" path="res://controlsWidget.tscn" id="6_826wr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
 bg_color = Color(0.207843, 0.207843, 0.207843, 1)

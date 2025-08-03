@@ -4,7 +4,8 @@ signal healthLost
 signal playerDied
 signal ateAsteroid
 
-var MINIMUM_HEIGHT = 7624
+var MINIMUM_HEIGHT = 8000
+var MAXIMUM_HEIGHT = 23000
 var size=0
 var startingSize=0
 var health=4
@@ -54,7 +55,10 @@ func _physics_process(delta: float) -> void:
 	speed *= 0.95
 		
 	translate(Vector2(speed,0));
-	#print(position.x)
+	print(position.x)
 	if(position.x < MINIMUM_HEIGHT):
 		position.x = MINIMUM_HEIGHT
+		speed = 0
+	if(position.x > MAXIMUM_HEIGHT):
+		position.x = MAXIMUM_HEIGHT
 		speed = 0

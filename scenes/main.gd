@@ -60,7 +60,7 @@ func _ready() -> void:
 		#pick a random color
 		var crand = randf()
 		var random_white = randf_range(0.4, 0.9)
-		if crand <= 0.5:
+		if crand <= 0.8:
 			var random_color = Color(randf_range(0.5, 0.75), randf_range(0.2, 0.4), 0)
 			(newObstacle as Node2D).modulate = random_color
 		else:
@@ -135,7 +135,7 @@ func _on_player_player_died() -> void:
 func _on_player_ate_asteroid() -> void:
 	$CollectSFX.play();
 	var PlayerMass = size_to_mass($PlayerRotator/Player.size)
-	if(PlayerMass >= TotaltoWin*0.0001):
+	if(PlayerMass >= TotaltoWin*0.9/2):
 		get_tree().change_scene_to_file("res://scenes/Win.tscn")
-	print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.0001])
+	print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.9/2])
 	
