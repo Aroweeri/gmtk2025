@@ -135,7 +135,7 @@ func _on_player_player_died() -> void:
 func _on_player_ate_asteroid() -> void:
 	$CollectSFX.play();
 	var PlayerMass = size_to_mass($PlayerRotator/Player.size)
-	if(PlayerMass >= TotaltoWin*0.1):
-		get_tree().change_scene_to_file("res://scenes/Main.tscn")
-	print("%.0f" % PlayerMass)
+	if(PlayerMass >= TotaltoWin*0.0001):
+		get_tree().change_scene_to_file("res://scenes/Win.tscn")
+	print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.0001])
 	
