@@ -101,14 +101,14 @@ zoom = Vector2(0.2, 0.2)
 shape = SubResource("CircleShape2D_0bbpv")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.3, 0.3)
+scroll_scale = Vector2(0.15, 0.15)
 scroll_offset = Vector2(715, 209)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 light_mask = 0
 z_index = -2
 material = SubResource("CanvasItemMaterial_q8u5g")
-scale = Vector2(14, 14)
+scale = Vector2(8, 8)
 texture = ExtResource("7_q8u5g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
