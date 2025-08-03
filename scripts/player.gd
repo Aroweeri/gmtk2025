@@ -2,6 +2,7 @@ extends Node2D
 
 signal healthLost
 signal playerDied
+signal ateAsteroid
 
 var MINIMUM_HEIGHT = 7624
 var size=0
@@ -22,10 +23,11 @@ func _area_on_body_entered(body):
 		#absorb
 		var bodyMass = size_to_mass(body.size)
 		var myMass = size_to_mass(size)
-		size = mass_to_size(bodyMass/4+myMass)
+		size = mass_to_size(bodyMass/2+myMass)
 		$Sprite.scale = Vector2(size/startingSize,size/startingSize)
 		$StaticBody2D/CollisionShape2D.shape.radius = startingSize*(size/startingSize)
 		body.queue_free()
+		ateAsteroid.emit()
 	else:
 		health-=1
 		if(health<0):
