@@ -138,9 +138,9 @@ func _on_player_ate_asteroid() -> void:
 	if(!playerIsSnowballing):
 		$CollectSFX.play();
 	var PlayerMass = size_to_mass($PlayerRotator/Player.size)
-	if(PlayerMass >= TotaltoWin*0.9/2):
+	if(PlayerMass >= TotaltoWin*0.95/3):
 		get_tree().change_scene_to_file("res://scenes/Win.tscn")
-	#print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.9/2])
+	#print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.95/3])
 	
 func _on_player_is_snowballing() -> void:
 	playerIsSnowballing = true
