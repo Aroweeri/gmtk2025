@@ -18,7 +18,7 @@ func mass_to_size(mass):
 
 func _area_on_body_entered(body):
 	if(body.size <= size/2.0):
-		print("My Mass %f + Their Mass %f = %f" % [size_to_mass(size), size_to_mass(body.size), (size_to_mass(size)+ size_to_mass(body.size))])
+		#print("My Mass %f + Their Mass %f = %f" % [size_to_mass(size), size_to_mass(body.size), (size_to_mass(size)+ size_to_mass(body.size))])
 		#absorb
 		var bodyMass = size_to_mass(body.size)
 		var myMass = size_to_mass(size)
@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	speed *= 0.95
 		
 	translate(Vector2(speed,0));
-	print(position.x)
+	#print(position.x)
 	if(position.x < MINIMUM_HEIGHT):
 		position.x = MINIMUM_HEIGHT
 		speed = 0

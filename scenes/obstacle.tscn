@@ -24,7 +24,6 @@ script = ExtResource("1_cjuko")
 shape = SubResource("CircleShape2D_cjuko")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-modulate = Color(0.753906, 0.753906, 0.753906, 1)
 texture = SubResource("CanvasTexture_i4xvc")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D/Sprite2D"]

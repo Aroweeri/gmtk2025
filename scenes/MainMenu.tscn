@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://401dukv06l6f"]
 
 [ext_resource type="Script" uid="uid://dar3mxenb0yy5" path="res://scripts/main_menu.gd" id="1_2wh52"]
-[ext_resource type="Script" path="res://scenes/credits.gd" id="2_l72w3"]
+[ext_resource type="Script" uid="uid://de4yeop2ks4dn" path="res://scenes/credits.gd" id="2_l72w3"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="2_ow34m"]
 [ext_resource type="Texture2D" uid="uid://chw70u2c8siwq" path="res://assets/Sun.png" id="3_l72w3"]
 [ext_resource type="AudioStream" uid="uid://bq6q3nuu6en2n" path="res://assets/Ludum Dare 30 - 07.ogg" id="4_ow34m"]
