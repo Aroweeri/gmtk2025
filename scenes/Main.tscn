@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b8lhxbmwq6pew" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="6_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="7_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://m3y52r3dbt7q" path="res://assets/Health.png" id="8_wp0k4"]
-[ext_resource type="PackedScene" path="res://controlsWidget.tscn" id="9_1iba3"]
+[ext_resource type="PackedScene" uid="uid://dll3jkyyw6d4k" path="res://controlsWidget.tscn" id="9_1iba3"]
 [ext_resource type="AudioStream" uid="uid://disjmopfasxnc" path="res://assets/Stream Loops 2024-03-20_02.ogg" id="10_lhr70"]
 [ext_resource type="AudioStream" uid="uid://qh0yjqrb8wr1" path="res://assets/impactGlass_medium_000.ogg" id="11_1nqs0"]
 [ext_resource type="AudioStream" uid="uid://c56q1ppmc7lrf" path="res://assets/impactGlass_medium_001.ogg" id="12_1iba3"]
@@ -175,6 +175,30 @@ offset_left = -316.0
 offset_top = -267.0
 offset_right = 0.0
 grow_horizontal = 0
+
+[node name="WinMessage" type="MarginContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -392.0
+offset_top = -109.0
+offset_right = 392.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/WinMessage"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "You Win! Press ESC to continue"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(2.74547, 2.74547)

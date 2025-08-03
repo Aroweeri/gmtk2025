@@ -5,6 +5,7 @@ var Obstacle2 = preload("res://scenes/obstacle2.tscn")
 var SFXPlayer;
 var TotaltoWin
 var playerIsSnowballing = false;
+var playerHasWon = false;
 
 func size_to_mass(s):
 	return PI*s*s
@@ -119,8 +120,8 @@ func _on_player_health_lost():
 	$DamageSFX.play();
 
 func _input(event: InputEvent) -> void:
-	if(event.is_action_pressed("ui_cancel")): #ESC for now
-		get_tree().quit();
+	if(playerHasWon and Input.is_action_pressed("ui_cancel")): #ESC for now
+		get_tree().change_scene_to_file("res://scenes/Win.tscn")
 		
 
 #draw the circle showing the player's trajectory
@@ -139,7 +140,8 @@ func _on_player_ate_asteroid() -> void:
 		$CollectSFX.play();
 	var PlayerMass = size_to_mass($PlayerRotator/Player.size)
 	if(PlayerMass >= TotaltoWin*0.95/3):
-		get_tree().change_scene_to_file("res://scenes/Win.tscn")
+		playerHasWon=true;
+		$CanvasLayer/WinMessage.show()
 	#print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.95/3])
 	
 func _on_player_is_snowballing() -> void:
