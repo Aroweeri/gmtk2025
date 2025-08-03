@@ -27,7 +27,7 @@ func _ready() -> void:
 		var tempRotator = Node2D.new()
 		var tempPositioner = Node2D.new();
 		tempRotator.rotation = randf()*PI*2
-		tempPositioner.position = Vector2(10000 + (sqrt(randf()*6000)*100), 0);
+		tempPositioner.position = Vector2(10000 + (sqrt(randf()*6000)*150), 0);
 		tempRotator.add_child(tempPositioner);
 		var targetPosition = Vector2(tempPositioner.global_position);
 		
