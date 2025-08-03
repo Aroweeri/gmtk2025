@@ -6,7 +6,15 @@ Art: Jdenki
 
 Background Music:
 
-music-loop-bundle
-by Abstraction
-https://tallbeard.itch.io/music-loop-bundle
-License: Creative Commons 0
+	music-loop-bundle by Abstraction
+	-- https://tallbeard.itch.io/music-loop-bundle -- License: Creative Commons 0
+
+Sound Effects:
+
+	Kenney Impact Sounds Pack
+	-- https://kenney.nl/assets/impact-sounds -- License: Creative Commons 0
+
+Other: 
+
+	Kenney Input Prompts Pack
+	-- https://kenney.nl/assets/input-prompts -- License: Creative Commons 0

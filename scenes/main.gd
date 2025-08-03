@@ -69,7 +69,8 @@ func _ready() -> void:
 		
 		#add to scene so it'll be actually be visible
 		add_child(newObstacle)
-		
+	
+	$PlayerRotator/Player.massInLevel = TotaltoWin
 	#Layer 2
 	#for i in range(1000):
 #
@@ -135,7 +136,7 @@ func _on_player_player_died() -> void:
 func _on_player_ate_asteroid() -> void:
 	$CollectSFX.play();
 	var PlayerMass = size_to_mass($PlayerRotator/Player.size)
-	if(PlayerMass >= TotaltoWin*0.9/2):
+	if(PlayerMass >= TotaltoWin*0.9/3):
 		get_tree().change_scene_to_file("res://scenes/Win.tscn")
-	print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.9/2])
+	#print("%.0f out of %.0f" % [PlayerMass, TotaltoWin*0.9/2])
 	

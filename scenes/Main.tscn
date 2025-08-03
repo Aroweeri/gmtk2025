@@ -185,4 +185,5 @@ stream = SubResource("AudioStreamRandomizer_v0vrg")
 
 [connection signal="ateAsteroid" from="PlayerRotator/Player" to="." method="_on_player_ate_asteroid"]
 [connection signal="healthLost" from="PlayerRotator/Player" to="." method="_on_player_health_lost"]
+[connection signal="isSnowballing" from="PlayerRotator/Player" to="PlayerRotator" method="_on_player_is_snowballing"]
 [connection signal="playerDied" from="PlayerRotator/Player" to="." method="_on_player_player_died"]
