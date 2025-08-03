@@ -15,13 +15,23 @@ func _physics_process(delta: float) -> void:
 		#rotate_amount /= 2
 		
 	#print("Distance: %0.2f Degrees/Sec: %0.2f" % [distance_to_player, rad_to_deg(rotate_amount)/delta])
+	var isBoostingOrSlowing = false;
 	if(Input.is_action_pressed("boost")):
-		if(additionalRotationSpeed < 0.002):
 			additionalRotationSpeed += 0.01 * delta
-	elif additionalRotationSpeed > 0:
-		additionalRotationSpeed -= 0.01 * delta
-		if(additionalRotationSpeed < 0):
-			additionalRotationSpeed = 0;
+			isBoostingOrSlowing = true
+	if(Input.is_action_pressed("slow")):
+			additionalRotationSpeed -= 0.01 * delta
+			isBoostingOrSlowing = true
+	if(additionalRotationSpeed > 0.002):
+		additionalRotationSpeed = 0.002
+	if(additionalRotationSpeed < -0.0008):
+		additionalRotationSpeed = -0.0008
+	additionalRotationSpeed *= 0.95
+	
+	if(not isBoostingOrSlowing and abs(additionalRotationSpeed) < 0.0001):
+		additionalRotationSpeed = 0;
+	
+	print(additionalRotationSpeed)
 			
 	rotate(rotate_amount + additionalRotationSpeed);
 		
