@@ -26,7 +26,7 @@ func _area_on_body_entered(body):
 		#absorb
 		var bodyMass = size_to_mass(body.size)
 		var myMass = size_to_mass(size)
-		if(myMass > massInLevel/3*0.12):
+		if(myMass > massInLevel/2*0.12):
 			#print("snowballing")
 			isSnowballing.emit()
 		size = mass_to_size(bodyMass/3+myMass)
