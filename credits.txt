@@ -1,11 +1,12 @@
-Credits
+﻿Credits
 
-	Sound Effects:
+Coding: NaiveCAD, Jdenki
 
-	Art: Jdenki
+Art: Jdenki
 
-	Coding: NaiveCAD, Jdenki
+Background Music:
 
-	Background Music:
-		music-loop-bundle by Abstraction
-			-- https://tallbeard.itch.io/music-loop-bundle -- License: Creative Commons 0
+music-loop-bundle
+by Abstraction
+https://tallbeard.itch.io/music-loop-bundle
+License: Creative Commons 0
