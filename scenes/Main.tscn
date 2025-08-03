@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bhujpltdw4ljj"]
+[gd_scene load_steps=34 format=3 uid="uid://bhujpltdw4ljj"]
 
 [ext_resource type="Script" uid="uid://cretloakqtccg" path="res://scenes/main.gd" id="1_rarhs"]
 [ext_resource type="Script" uid="uid://dp84pamq5ofd7" path="res://scripts/rotator.gd" id="2_0bbpv"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://disjmopfasxnc" path="res://assets/Stream Loops 2024-03-20_02.ogg" id="10_lhr70"]
 [ext_resource type="AudioStream" uid="uid://qh0yjqrb8wr1" path="res://assets/impactGlass_medium_000.ogg" id="11_1nqs0"]
 [ext_resource type="AudioStream" uid="uid://c56q1ppmc7lrf" path="res://assets/impactGlass_medium_001.ogg" id="12_1iba3"]
+[ext_resource type="AudioStream" uid="uid://c6st8x7x46gbm" path="res://assets/Ludum Dare 30 - 04.ogg" id="12_yxlcp"]
 [ext_resource type="AudioStream" uid="uid://b78m4vqoh11hg" path="res://assets/impactGlass_medium_002.ogg" id="13_yxlcp"]
 [ext_resource type="AudioStream" uid="uid://b5huyvhtwccr6" path="res://assets/impactGlass_medium_003.ogg" id="14_ebg2g"]
 [ext_resource type="AudioStream" uid="uid://f23th0stl4xc" path="res://assets/impactGlass_medium_004.ogg" id="15_2ofn6"]
@@ -177,6 +178,10 @@ volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
+[node name="VictoryMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_yxlcp")
+parameters/looping = true
+
 [node name="CollectSFX" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_gsxep")
 
@@ -185,5 +190,6 @@ stream = SubResource("AudioStreamRandomizer_v0vrg")
 
 [connection signal="ateAsteroid" from="PlayerRotator/Player" to="." method="_on_player_ate_asteroid"]
 [connection signal="healthLost" from="PlayerRotator/Player" to="." method="_on_player_health_lost"]
+[connection signal="isSnowballing" from="PlayerRotator/Player" to="." method="_on_player_is_snowballing"]
 [connection signal="isSnowballing" from="PlayerRotator/Player" to="PlayerRotator" method="_on_player_is_snowballing"]
 [connection signal="playerDied" from="PlayerRotator/Player" to="." method="_on_player_player_died"]

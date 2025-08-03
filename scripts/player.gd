@@ -12,6 +12,7 @@ var startingSize=0
 var health=4
 var speed=0
 var massInLevel
+var playerIsSnowballing = false;
 
 #size is equivalent to diameter
 func size_to_mass(s):
@@ -26,9 +27,9 @@ func _area_on_body_entered(body):
 		#absorb
 		var bodyMass = size_to_mass(body.size)
 		var myMass = size_to_mass(size)
-		if(myMass > massInLevel/2*0.12):
-			#print("snowballing")
+		if(not playerIsSnowballing and myMass > massInLevel/2*0.12):
 			isSnowballing.emit()
+			playerIsSnowballing=true
 		size = mass_to_size(bodyMass/3+myMass)
 		$Sprite.scale = Vector2(size/startingSize,size/startingSize)
 		$StaticBody2D/CollisionShape2D.shape.radius = startingSize*(size/startingSize)
