@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	speed *= 0.95
 		
 	translate(Vector2(speed,0));
-	print(position.x)
+	#print(position.x)
 	if(position.x < MINIMUM_HEIGHT):
 		position.x = MINIMUM_HEIGHT
 		speed = 0
