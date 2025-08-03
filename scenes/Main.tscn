@@ -83,7 +83,7 @@ texture = ExtResource("2_nxtc6")
 script = ExtResource("2_0bbpv")
 
 [node name="Player" type="Node2D" parent="PlayerRotator"]
-position = Vector2(10000, 0)
+position = Vector2(9455, 0)
 script = ExtResource("3_0bbpv")
 
 [node name="Sprite" type="Sprite2D" parent="PlayerRotator/Player"]
@@ -94,7 +94,7 @@ texture = SubResource("CanvasTexture_qmy6f")
 occluder = SubResource("OccluderPolygon2D_1iba3")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRotator/Player"]
-position = Vector2(0, 1673)
+position = Vector2(0, 1364)
 zoom = Vector2(0.2, 0.2)
 
 [node name="StaticBody2D" type="Area2D" parent="PlayerRotator/Player"]
