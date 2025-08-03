@@ -11,8 +11,9 @@ func _physics_process(delta: float) -> void:
 	
 	var rotate_amount = BASE_ROTATION_SPEED/2 * (1/distance_to_player) * delta
 	
-	if(Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up")):
-		rotate_amount /= 2
+	#if(Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up")):
+		#rotate_amount /= 2
+		
 		
 	#print("Distance: %0.2f Degrees/Sec: %0.2f" % [distance_to_player, rad_to_deg(rotate_amount)/delta])
 	if(Input.is_action_pressed("boost")):
