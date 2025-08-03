@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b8lhxbmwq6pew" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="6_nxtc6"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="7_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://m3y52r3dbt7q" path="res://assets/Health.png" id="8_wp0k4"]
-[ext_resource type="PackedScene" path="res://controlsWidget.tscn" id="9_1iba3"]
+[ext_resource type="PackedScene" uid="uid://dll3jkyyw6d4k" path="res://controlsWidget.tscn" id="9_1iba3"]
 [ext_resource type="AudioStream" uid="uid://disjmopfasxnc" path="res://assets/Stream Loops 2024-03-20_02.ogg" id="10_lhr70"]
 [ext_resource type="AudioStream" uid="uid://qh0yjqrb8wr1" path="res://assets/impactGlass_medium_000.ogg" id="11_1nqs0"]
 [ext_resource type="AudioStream" uid="uid://c56q1ppmc7lrf" path="res://assets/impactGlass_medium_001.ogg" id="12_1iba3"]

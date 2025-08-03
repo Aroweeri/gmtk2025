@@ -43,4 +43,6 @@ func _physics_process(delta: float) -> void:
 		
 func _on_player_is_snowballing() -> void:
 	playerIsSnowballing=true;
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(0.05, 0.05), 4);
 	
