@@ -95,7 +95,7 @@ occluder = SubResource("OccluderPolygon2D_1iba3")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRotator/Player"]
 position = Vector2(0, 1364)
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(0.18, 0.18)
 
 [node name="StaticBody2D" type="Area2D" parent="PlayerRotator/Player"]
 

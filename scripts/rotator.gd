@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	#rotate faster/slower based on distance from center of world to player
 	var distance_to_player = self.global_position.distance_to($Player.global_position)
 	
-	var rotate_amount = BASE_ROTATION_SPEED/2 * (1/distance_to_player) * delta
+	var rotate_amount = BASE_ROTATION_SPEED/2.0 * (1.0/distance_to_player) * delta
 	
 	#if(Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up")):
 		#rotate_amount /= 2
