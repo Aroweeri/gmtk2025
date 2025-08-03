@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://jxcugdk853mw"]
+[gd_scene load_steps=5 format=3 uid="uid://d03rbhs3vpj6j"]
 
 [ext_resource type="Script" uid="uid://bruy2wyqmb6n7" path="res://scripts/gameover.gd" id="1_4noiy"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="2_gijjb"]
@@ -32,14 +32,17 @@ text = "Game Over"
 
 [node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Return to Main Menu"
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="TextureRect" type="TextureRect" parent="."]

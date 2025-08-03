@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://401dukv06l6f"]
+[gd_scene load_steps=9 format=3 uid="uid://401dukv06l6f"]
 
 [ext_resource type="Script" uid="uid://dar3mxenb0yy5" path="res://scripts/main_menu.gd" id="1_2wh52"]
 [ext_resource type="Script" uid="uid://de4yeop2ks4dn" path="res://scenes/credits.gd" id="2_l72w3"]
 [ext_resource type="Texture2D" uid="uid://dwrufhrusf85g" path="res://assets/Space.png" id="2_ow34m"]
+[ext_resource type="Texture2D" uid="uid://bnbcemgql0u21" path="res://assets/Rocky_Road.png" id="2_ucygd"]
 [ext_resource type="Texture2D" uid="uid://chw70u2c8siwq" path="res://assets/Sun.png" id="3_l72w3"]
 [ext_resource type="AudioStream" uid="uid://bq6q3nuu6en2n" path="res://assets/Ludum Dare 30 - 07.ogg" id="4_ow34m"]
 [ext_resource type="PackedScene" uid="uid://dll3jkyyw6d4k" path="res://controlsWidget.tscn" id="6_826wr"]
@@ -21,36 +22,53 @@ script = ExtResource("1_2wh52")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2000.0
+offset_top = -1107.0
+offset_right = 2000.0
+offset_bottom = 893.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="TextureRect3" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(1000, 1000)
 layout_mode = 2
+texture = ExtResource("2_ucygd")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 150
-text = "The Rocky Road
-to planethood"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 97.0
+offset_right = 100.0
+offset_bottom = 233.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-disabled = true
-text = "Options"
-
-[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -126,8 +144,7 @@ offset_top = -267.0
 offset_right = 0.0
 grow_horizontal = 0
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Credits/PanelContainer/MarginContainer/VBoxContainer/CloseCredits" to="." method="_on_close_credits_pressed"]
