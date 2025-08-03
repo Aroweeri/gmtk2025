@@ -3,6 +3,13 @@ extends Node2D
 var Obstacle = preload("res://scenes/obstacle.tscn")
 var Obstacle2 = preload("res://scenes/obstacle2.tscn")
 var SFXPlayer;
+var TotaltoWin
+
+func size_to_mass(s):
+	return PI*s*s
+
+func mass_to_size(mass):
+	return sqrt(mass/PI)
 
 func _process(_delta: float) -> void:
 	queue_redraw()
@@ -10,7 +17,7 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	
 	SFXPlayer = AudioStreamPlayer.new();
-	
+	TotaltoWin = 0
 	#loop and create 800 different asteroids
 	for i in range(1000):
 		
@@ -38,6 +45,7 @@ func _ready() -> void:
 		#set it's size for eating math
 		newObstacle.startingSize = newObstacle.get_node("CollisionShape2D").shape.radius
 		newObstacle.size = newObstacle.startingSize * scaleFactor
+		TotaltoWin += size_to_mass(newObstacle.size) 
 		
 		#now to scale the collision shape to match the sprite's size (can't just scale it, it breaks)
 		#workaround to avoid changing one asteroid's collision shape causing all the asteroids to use that shape
@@ -126,3 +134,8 @@ func _on_player_player_died() -> void:
 
 func _on_player_ate_asteroid() -> void:
 	$CollectSFX.play();
+	var PlayerMass = size_to_mass($PlayerRotator/Player.size)
+	if(PlayerMass >= TotaltoWin*0.1):
+		get_tree().change_scene_to_file("res://scenes/Main.tscn")
+	print("%.0f" % PlayerMass)
+	

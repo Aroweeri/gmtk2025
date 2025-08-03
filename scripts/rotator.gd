@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	if(not isBoostingOrSlowing and abs(additionalRotationSpeed) < 0.0001):
 		additionalRotationSpeed = 0;
 	
-	print(additionalRotationSpeed)
+	#print(additionalRotationSpeed)
 			
 	rotate(rotate_amount + additionalRotationSpeed);
 		
