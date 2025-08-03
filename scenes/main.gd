@@ -102,7 +102,8 @@ func _ready() -> void:
 
 func _on_player_health_lost():
 	$AudioStreamPlayer.play();
-	$CanvasLayer/MarginContainer/healthHBox.get_child(0).queue_free()
+	$CanvasLayer/MarginContainer/healthHBox.get_child($CanvasLayer/MarginContainer/healthHBox.get_children().size()-1).queue_free()
+	
 
 func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("ui_cancel")): #ESC for now

@@ -6,7 +6,7 @@ signal playerDied
 var MINIMUM_HEIGHT = 7624
 var size=0
 var startingSize=0
-var health=5
+var health=4
 var speed=0
 
 #size is equivalent to diameter
