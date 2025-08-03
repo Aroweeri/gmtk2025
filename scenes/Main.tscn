@@ -94,7 +94,7 @@ show_behind_parent = true
 occluder = SubResource("OccluderPolygon2D_wp0k4")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerRotator/Player"]
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(0.05, 0.05)
 
 [node name="StaticBody2D" type="Area2D" parent="PlayerRotator/Player"]
 
@@ -185,4 +185,5 @@ stream = SubResource("AudioStreamRandomizer_v0vrg")
 
 [connection signal="ateAsteroid" from="PlayerRotator/Player" to="." method="_on_player_ate_asteroid"]
 [connection signal="healthLost" from="PlayerRotator/Player" to="." method="_on_player_health_lost"]
+[connection signal="isSnowballing" from="PlayerRotator/Player" to="PlayerRotator" method="_on_player_is_snowballing"]
 [connection signal="playerDied" from="PlayerRotator/Player" to="." method="_on_player_player_died"]

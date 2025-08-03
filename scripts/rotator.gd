@@ -3,9 +3,15 @@ extends Node2D
 var BASE_ROTATION_SPEED=2000
 var MAX_ROTATION_SPEED=0.003
 var additionalRotationSpeed=0
+var playerIsSnowballing=false;
+var snowballCounter=0
 
 func _physics_process(delta: float) -> void:
 	
+	if(playerIsSnowballing and snowballCounter < 200):
+		BASE_ROTATION_SPEED+=60
+		snowballCounter+=1
+		
 	#rotate faster/slower based on distance from center of world to player
 	var distance_to_player = self.global_position.distance_to($Player.global_position)
 	
@@ -35,4 +41,6 @@ func _physics_process(delta: float) -> void:
 			
 	rotate(rotate_amount + additionalRotationSpeed);
 		
+func _on_player_is_snowballing() -> void:
+	playerIsSnowballing=true;
 	

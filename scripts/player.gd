@@ -3,12 +3,14 @@ extends Node2D
 signal healthLost
 signal playerDied
 signal ateAsteroid
+signal isSnowballing
 
 var MINIMUM_HEIGHT = 7624
 var size=0
 var startingSize=0
 var health=4
 var speed=0
+var massInLevel
 
 #size is equivalent to diameter
 func size_to_mass(s):
@@ -23,9 +25,13 @@ func _area_on_body_entered(body):
 		#absorb
 		var bodyMass = size_to_mass(body.size)
 		var myMass = size_to_mass(size)
-		size = mass_to_size(bodyMass/2+myMass)
+		if(myMass > massInLevel/3*0.12):
+			#print("snowballing")
+			isSnowballing.emit()
+		size = mass_to_size(bodyMass/3+myMass)
 		$Sprite.scale = Vector2(size/startingSize,size/startingSize)
 		$StaticBody2D/CollisionShape2D.shape.radius = startingSize*(size/startingSize)
+		#$Camera2D.zoom 
 		body.queue_free()
 		ateAsteroid.emit()
 	else:
@@ -34,7 +40,6 @@ func _area_on_body_entered(body):
 			playerDied.emit()
 		else:
 			healthLost.emit()
-			pass
 
 func _ready() -> void:
 	startingSize = $StaticBody2D/CollisionShape2D.shape.radius
