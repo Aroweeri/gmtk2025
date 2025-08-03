@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bhujpltdw4ljj"]
+[gd_scene load_steps=36 format=3 uid="uid://bhujpltdw4ljj"]
 
 [ext_resource type="Script" uid="uid://cretloakqtccg" path="res://scenes/main.gd" id="1_rarhs"]
 [ext_resource type="Script" uid="uid://dp84pamq5ofd7" path="res://scripts/rotator.gd" id="2_0bbpv"]
@@ -22,6 +22,9 @@
 [ext_resource type="AudioStream" uid="uid://csgc7rqmy7sd6" path="res://assets/impactPlate_heavy_002.ogg" id="18_fs0b5"]
 [ext_resource type="AudioStream" uid="uid://b8cyplx7g0doa" path="res://assets/impactPlate_heavy_003.ogg" id="19_ma7h6"]
 [ext_resource type="AudioStream" uid="uid://dt8q8a67oh43j" path="res://assets/impactPlate_heavy_004.ogg" id="20_e2s0e"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ebg2g"]
+light_mode = 1
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qmy6f"]
 diffuse_texture = ExtResource("5_wp0k4")
@@ -79,6 +82,7 @@ stream_4/stream = ExtResource("20_e2s0e")
 script = ExtResource("1_rarhs")
 
 [node name="Sun" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_ebg2g")
 scale = Vector2(8, 8)
 texture = ExtResource("2_nxtc6")
 
